@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "finelog-crm"
+    }
+  },
+  "defaultProject": "finelog-crm",
+  "cli": {
+    "analytics": false
+  }
 }
