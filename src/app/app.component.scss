@@ -1,3 +1,11 @@
-h1 {
-  background: blue;
+
+@font-face {
+  font-family: "New Super Mario Font U";
+  src: url("../assets/Mario.ttf")
+}
+
+.Title
+{
+font-family: "New Super Mario Font U";
+font-size: larger;
 }
