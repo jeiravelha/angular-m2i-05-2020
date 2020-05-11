@@ -1,0 +1,22 @@
+@import 'theme';
+@import 'fonts';
+
+:host {
+  width: 100%;
+  text-align: center;
+  h1 {
+    font-size: $h2-fz;
+    color: $color3;
+  }
+}
+
+@font-face {
+  font-family: "New Super Mario Font U";
+  src: url("../../../../assets/Mario.ttf")
+}
+
+.Title
+{
+font-family: "New Super Mario Font U";
+font-size: larger;
+}
