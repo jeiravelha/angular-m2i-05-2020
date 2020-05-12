@@ -1,5 +1,10 @@
 
 Todo:
-  ☐ Installer Font-awesone
+  ☐ Installer Font-awesone : ng add @fortawesome/angular-fontawesome@0.6.1
   ☐ Finir User Interface
   ☐ Ng-content
+  ☐ Création webcomponent :
+  ☐ ng g component icons/components/icon-nav --export
+  ☐ ng g component icons/components/icon-edit --export
+  ☐ ng g component icons/components/icon-trash --export
+  ☐ ng g component icons/components/icon-close --export
