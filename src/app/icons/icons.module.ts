@@ -7,13 +7,14 @@ import { IconTrashComponent } from './components/icon-trash/icon-trash.component
 import { IconCloseComponent } from './components/icon-close/icon-close.component';
 import { IconClientsComponent } from './components/icon-clients/icon-clients.component';
 import { IconOrdersComponent } from './components/icon-orders/icon-orders.component';
+import { IconLoginComponent } from './components/icon-login/icon-login.component';
 
 @NgModule({
-  declarations: [IconNavComponent, IconEditComponent, IconTrashComponent, IconCloseComponent, IconClientsComponent, IconOrdersComponent],
+  declarations: [IconNavComponent, IconEditComponent, IconTrashComponent, IconCloseComponent, IconClientsComponent, IconOrdersComponent, IconLoginComponent],
   imports: [
     CommonModule,
     FontAwesomeModule
   ],
-  exports: [IconNavComponent, IconEditComponent, IconTrashComponent, IconCloseComponent, IconClientsComponent, IconOrdersComponent]
+  exports: [IconNavComponent, IconEditComponent, IconTrashComponent, IconCloseComponent, IconClientsComponent, IconOrdersComponent, IconLoginComponent]
 })
 export class IconsModule { }
