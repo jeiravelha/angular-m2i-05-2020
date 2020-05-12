@@ -1,28 +1,15 @@
 <header class="fixed-top">
   <app-icon-nav (click)="toggle()"></app-icon-nav>
-  <!--
-  <ng-content select='.header'></ng-content>-->
-  &nbsp;&nbsp;&nbsp;
-  <img
-    width="60"
-    alt="Finelog-Biseum"
-    src="..\\assets\\Logo.png"
-  />
-
-  <div class="Title" style="float: center;">
-    <h1>Mario Angular</h1>
-  </div>
-
+  <ng-content select='.header'></ng-content>
 </header>
-<main>
+<main [ngClass]="{'close-aside':!open}">
 
   <div class="shadow position-fixed">
   </div>
 
   <aside>
     <div class="scroller">
-      <!-- <ng-content select=".nav"></ng-content> -->
-      Navigation
+      <ng-content select=".nav"></ng-content>
     </div>
   </aside>
 
@@ -34,13 +21,7 @@
     </div>
 
     <footer>
-      <img
-      width="60"
-      alt="Finelog-Biseum"
-      src="..\\assets\\About.png"
-    />
-    &copy; Powered By Nintendo
-      <!-- <ng-content select=".footer"></ng-content> -->
+      <ng-content select='.footer'></ng-content>
     </footer>
 
   </div>
