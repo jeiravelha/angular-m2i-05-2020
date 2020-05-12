@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { SharedModule } from '../shared/shared.module';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { PageListOrderComponent } from './pages/page-list-order/page-list-order.component';
+
 
 
 
@@ -9,7 +11,8 @@ import { PageListOrderComponent } from './pages/page-list-order/page-list-order.
   declarations: [PageListOrderComponent],
   imports: [
     CommonModule,
-    OrdersRoutingModule
+    OrdersRoutingModule,
+    SharedModule
   ]
 })
 export class OrdersModule { }

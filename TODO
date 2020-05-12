@@ -2,7 +2,7 @@
 Todo:
   ☐ Installer Font-awesone : ng add @fortawesome/angular-fontawesome@0.6.1
 
-  ☐ Création webcomponent :
+  Création webcomponent :
   ☐ ng g component icons/components/icon-nav --export
   ☐ ng g component icons/components/icon-edit --export
   ☐ ng g component icons/components/icon-trash --export
@@ -10,8 +10,25 @@ Todo:
 
   ☐ ng serve : Build + Launch
 
-  ☐ Fichier module tout simple :
+  Fichier module tout simple :
   ☐ ng g module clients/clients-routing --flat
 
-  ☐ Création enum :
+  Création enum :
   ☐ ng g enum shared/enums/state-order
+
+  Création interface :
+  ☐ ng g interface shared/interfaces/order-i
+
+  Création model :
+  ☐ ng g class shared/models/order
+  ☐ ng g class shared/models/client
+
+  Service :
+  ☐ ng g service orders/services/orders
+  ☐ ng g service clients/services/clients
+
+  Appel HTTP :
+  ☐
+
+  Pipe rxjs :
+  ☐
