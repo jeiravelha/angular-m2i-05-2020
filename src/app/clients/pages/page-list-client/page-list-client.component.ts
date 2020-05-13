@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Client } from 'src/app/shared/models/client';
+import { ClientsService } from '../../services/clients.service';
 
 @Component({
   selector: 'app-page-list-client',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageListClientComponent implements OnInit {
 
-  constructor() { }
+  public headers: string[];
+  public collection$: Observable<Client[]>;
+  public title: string;
+  public subtitle: string;
+  constructor(private os: ClientsService) { }
 
   ngOnInit(): void {
+    this.title = 'Clients :';
+    this.subtitle = 'All clients';
+    this.headers = ["Name", "CA", "State"];
+    this.collection$ = this.os.collection;
   }
-
 }

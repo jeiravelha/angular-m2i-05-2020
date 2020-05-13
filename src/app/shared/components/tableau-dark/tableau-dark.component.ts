@@ -1,5 +1,4 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { Order } from '../../models/order';
 
 @Component({
   selector: 'app-tableau-dark',
@@ -7,8 +6,6 @@ import { Order } from '../../models/order';
   styleUrls: ['./tableau-dark.component.scss']
 })
 export class TableauDarkComponent implements OnInit, OnChanges {
-
-  @Input() collection: Order[];
   @Input() headers: string[];
 
   constructor() { }
