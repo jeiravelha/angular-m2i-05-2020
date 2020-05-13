@@ -1,0 +1,13 @@
+<div class="alert alert-primary" *ngIf="title || subtitle">
+  <h1 *ngIf="title">{{ title }}</h1>
+  <h2 *ngIf="subtitle">{{ subtitle }}</h2>
+
+  <div class="alert alert-primary" style="float: left;">
+    <img
+    src="../../../../assets/i_orders.png"
+    height="100px"
+    />
+  </div>
+</div>
+
+<ng-content></ng-content>

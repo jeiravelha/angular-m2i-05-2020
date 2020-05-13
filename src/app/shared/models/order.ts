@@ -1,5 +1,6 @@
 import { OrderI } from '../interfaces/order-i';
 import { StateOrder } from '../enums/state-order.enum';
+import { isNull } from 'util';
 
 export class Order implements OrderI {
   tjmHt : 1500;

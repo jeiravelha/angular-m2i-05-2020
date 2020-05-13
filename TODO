@@ -9,6 +9,8 @@ Todo:
   ☐ ng g component icons/components/icon-close --export
 
   ☐ ng serve : Build + Launch
+  ☐ ng build : build dev
+  ☐ ng build --prod : build prod
 
   Fichier module tout simple :
   ☐ ng g module clients/clients-routing --flat
@@ -27,8 +29,13 @@ Todo:
   ☐ ng g service orders/services/orders
   ☐ ng g service clients/services/clients
 
+  Lancer json server sur un fichier json :
+  ☐ json-server --watch src/mock_db/db.json
+
   Appel HTTP :
   ☐
 
   Pipe rxjs :
   ☐
+
+  ☐ `  <- AltGR + 7
