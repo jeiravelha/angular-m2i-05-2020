@@ -1,24 +1,7 @@
 <app-template-a [title]="title" [subtitle]="subtitle">
 
 <div class="borders">
-  <table class="table table-hover table-dark">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Client</th>
-        <th scope="col">Comment</th>
-        <th scope="col">TJM</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let item of collection">
-      <tr>
-        <th scope="row">{{item.id}}</th>
-        <td>{{ item.client }}</td>
-        <td>{{ item.comment }}</td>
-        <td>{{ item.tjmHt | currency: 'EUR'}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <app-tableau-dark [collection]="collection"></app-tableau-dark>
 </div>
 
 </app-template-a>
