@@ -9,6 +9,7 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrderComponent implements OnInit {
 
+  public headers : string[];
   public collection: Order[];
   public title: string;
   public subtitle: string;
@@ -17,10 +18,10 @@ export class PageListOrderComponent implements OnInit {
   ngOnInit(): void {
     this.title = 'Orders :';
     this.subtitle = 'All orders';
+    this.headers = ["Type","Client","NbJours","TJM HT","Total HT","Total TTC","State"];
 
     this.os.collection.subscribe((datas)=> {
       this.collection = datas;
-      console.log(this.collection);
     }
     );
   }

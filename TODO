@@ -36,6 +36,8 @@ Todo:
   ☐
 
   Pipe rxjs :
-  ☐
+  ☐ ng g pipe shared/pipes/total -- export
 
   ☐ `  <- AltGR + 7
+
+

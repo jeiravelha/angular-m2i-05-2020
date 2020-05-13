@@ -1,7 +1,7 @@
 <app-template-a [title]="title" [subtitle]="subtitle">
 
 <div class="borders">
-  <app-tableau-dark [collection]="collection"></app-tableau-dark>
+  <app-tableau-dark *ngIf="collection" [collection]="collection" [headers]="headers"></app-tableau-dark>
 </div>
 
 </app-template-a>

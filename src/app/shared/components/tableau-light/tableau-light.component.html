@@ -1,13 +1,7 @@
 <table class="table table-hover" >
   <thead>
-    <tr>
-      <th scope="col">Type</th>
-      <th scope="col">Client</th>
-      <th scope="col">NbJours</th>
-      <th scope="col">TJM HT</th>
-      <th scope="col">Total HT</th>
-      <th scope="col">Total TTC</th>
-      <th scope="col">State</th>
+    <tr >
+      <th *ngFor="let headitem of headers" scope="col">{{headitem}}</th>
     </tr>
   </thead>
   <tbody>
@@ -16,8 +10,8 @@
       <td>{{item.client}}</td>
       <td>{{item.nbJours}}</td>
       <td>{{item.tjmHt | currency:'EUR'}}</td>
-      <td>{{item.totalHt()| currency:'EUR'}}</td>
-      <td>{{item.totalTtc()| currency:'EUR'}}</td>
+      <td>{{item.totalHt() | currency:'EUR'}}</td>
+      <td>{{item.totalTtc() | currency:'EUR'}}</td>
       <td>{{item.state}}</td>
     </tr>
   </tbody>
