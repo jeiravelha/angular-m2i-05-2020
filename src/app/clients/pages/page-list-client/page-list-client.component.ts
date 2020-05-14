@@ -3,6 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { Client } from 'src/app/shared/models/client';
 import { ClientsService } from '../../services/clients.service';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
+import { Button } from 'src/app/shared/interfaces/button';
 
 @Component({
   selector: 'app-page-list-client',
@@ -16,11 +17,16 @@ export class PageListClientComponent implements OnInit {
   public title: string;
   public subtitle: string;
 
+  public btnRoute : Button;
+
   public states = Object.values(StateClient);
 
   constructor(private cs: ClientsService) { }
 
   ngOnInit(): void {
+    this.btnRoute = {
+      text: 'Add Client', route: 'add'
+    }
     this.title = 'Clients :';
     this.subtitle = 'All clients';
     this.headers = ["","","Name", "CA", "CA TTC", "State"];

@@ -27,7 +27,7 @@ export class PageListOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.btnRoute = {
-      text: 'Add Route', route: 'add'
+      text: 'Add Order', route: 'add'
     }
     this.btnHref = {
       text: 'Google', href:'http://www.google.com'
