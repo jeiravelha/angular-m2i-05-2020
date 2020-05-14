@@ -1,6 +1,8 @@
 <div class="alert alert-warning" *ngIf="title || subtitle">
-  <h1 *ngIf="title">{{ title }}</h1>
-  <h2 *ngIf="subtitle">{{ subtitle }}</h2>
+  <app-text>
+    <h1 *ngIf="title">{{ title }}</h1>
+    <h2 *ngIf="subtitle">{{ subtitle }}</h2>
+  </app-text>
 
   <div class="alert alert-warning" style="float: left;">
     <img

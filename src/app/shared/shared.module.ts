@@ -8,6 +8,7 @@ import { TotalPipe } from './pipes/total.pipe';
 import { StateDirective } from './directives/state.directive';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TextModule } from '../text/text.module';
 
 
 
@@ -19,13 +20,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ButtonComponent,
     TableauDarkComponent,
     TotalPipe,
-    StateDirective
+    StateDirective,
+    TextModule
   ],
   imports: [
     CommonModule,
     TemplatesModule,
     RouterModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    TextModule
   ]
 })
 export class SharedModule { }
