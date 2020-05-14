@@ -35,14 +35,14 @@
     {
       "name": "Christophe",
       "ca": 12000,
-      "state": "Actif",
+      "state": "Active",
       "id": 1
     },
     {
-      "id": 2,
       "name": "Jeff",
       "ca": 22000,
-      "state": "Active"
+      "state": "Active",
+      "id": 2
     }
   ]
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { faSave } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-button',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
+  @Input() text : string;
+  @Input() route : string;
+  @Input() href : string;
+  @Input() action : boolean;
+  public myCurrentIcon = faSave;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public doAction() {
+
   }
 
 }

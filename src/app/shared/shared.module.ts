@@ -6,6 +6,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { TableauDarkComponent } from './components/tableau-dark/tableau-dark.component';
 import { TotalPipe } from './pipes/total.pipe';
 import { StateDirective } from './directives/state.directive';
+import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -21,7 +23,9 @@ import { StateDirective } from './directives/state.directive';
   ],
   imports: [
     CommonModule,
-    TemplatesModule
+    TemplatesModule,
+    RouterModule,
+    FontAwesomeModule
   ]
 })
 export class SharedModule { }

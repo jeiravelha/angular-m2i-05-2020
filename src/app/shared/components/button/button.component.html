@@ -1,1 +1,7 @@
-<p>button works!</p>
+<a class="btn btn-primary" *ngIf="route" [routerLink]="route"> {{text}}</a>
+<a class="btn btn-primary" *ngIf="href" [href]="href"> {{text}}</a>
+<button class="btn btn-primary" *ngIf="action" (click)="doAction()">
+  <fa-icon [icon]="myCurrentIcon" style="font-size: 30px"></fa-icon>
+  &nbsp;
+  {{text}}
+</button>
