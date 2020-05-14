@@ -50,5 +50,10 @@ export class ClientsService {
 
   // Add item
 
+  // Delete item
+  public delete(itemid:number) : Observable<Client>{
+    return this.http.delete<Client>(`${this.urlApi}clients/${itemid}`);
+  }
+
   //Get Item by Id
 }

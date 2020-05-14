@@ -18,20 +18,29 @@ export class PageListClientComponent implements OnInit {
 
   public states = Object.values(StateClient);
 
-  constructor(private os: ClientsService) { }
+  constructor(private cs: ClientsService) { }
 
   ngOnInit(): void {
     this.title = 'Clients :';
     this.subtitle = 'All clients';
-    this.headers = ["Name", "CA", "State"];
-    this.collection$ = this.os.collection;
+    this.headers = ["","","Name", "CA", "CA TTC", "State"];
+    this.collection$ = this.cs.collection;
   }
 
   public changeState(item : Client, event){
-    this.os.changeState(item, event.target.value).subscribe( (res) => {
+    this.cs.changeState(item, event.target.value).subscribe( (res) => {
       //console.log(res);
       //Traitement Error + mise à jour state de l'item car réussi
       item.state = res.state;
     } );
+  }
+
+  public deleterecord(item : Client){
+    this.cs.delete(item.id).subscribe( (res) => {
+    } );
+  }
+
+  public editrecord(item : Client){
+    //
   }
 }

@@ -54,4 +54,13 @@ export class PageListOrderComponent implements OnInit {
     console.log("openbtn");
   }
 
+  public deleterecord(item : Order){
+    this.os.delete(item.id).subscribe( (res) => {
+    } );
+  }
+
+  public editrecord(item : Order){
+    //
+  }
+
 }

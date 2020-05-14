@@ -50,6 +50,10 @@ export class OrdersService {
 
   // Add item
 
+  // Delete Item
+  public delete(itemid:number) : Observable<Order>{
+    return this.http.delete<Order>(`${this.urlApi}orders/${itemid}`);
+  }
 
   //Get Item by Id
 

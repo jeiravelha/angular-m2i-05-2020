@@ -3,8 +3,15 @@
   <div class="borders">
     <app-tableau-dark *ngIf="collection$ | async as collection" [headers]="headers">
       <tr *ngFor="let item of collection">
+        <td>
+          <app-icon-edit (click)="editrecord(item)"></app-icon-edit>
+        </td>
+        <td>
+          <app-icon-trash (click)="deleterecord(item)"></app-icon-trash>
+        </td>
         <td>{{item.name}}</td>
         <td>{{item.ca | currency:'EUR'}}</td>
+        <td>{{item | total:'Client_TTC' | currency:'EUR'}}</td>
         <td [appState]="item.state">
           <select class="form-control" (change)="changeState(item, $event)">
                 <option *ngFor="let state of states" [value]="state" [selected]="state == item.state">{{state}}</option>

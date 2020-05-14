@@ -10,12 +10,16 @@ export class TotalPipe implements PipeTransform {
       if(args.length > 0)
       {
         switch(args[0]) {
-          case 'HT': {
+          case 'Order_HT': {
             return value.totalHt();
              break;
           }
-          case 'TTC': {
+          case 'Order_TTC': {
             return value.totalTtc();
+             break;
+          }
+          case 'Client_TTC': {
+            return value.ca * 1.2;
              break;
           }
           default: {

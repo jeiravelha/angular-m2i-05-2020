@@ -1,16 +1,6 @@
 {
   "orders": [
     {
-      "nbJours": 10,
-      "tva": 20,
-      "state": "Cancel",
-      "tjmHt": 1200,
-      "id": 1,
-      "typePresta": "Coaching",
-      "client": "Modis",
-      "comment": "Merci Modis pour les 1.2k jour"
-    },
-    {
       "nbJours": 1,
       "tva": 20,
       "state": "Option",
