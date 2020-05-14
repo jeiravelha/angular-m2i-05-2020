@@ -13,12 +13,42 @@
     {
       "nbJours": 1,
       "tva": 20,
-      "state": "Confirmed",
+      "state": "Cancel",
       "tjmHt": 1200,
       "typePresta": "formation",
       "client": "Edugroupe",
       "comment": "merci edugroupe",
-      "id": 3
+      "id": 10
+    },
+    {
+      "nbJours": 1,
+      "tva": 20,
+      "state": "Cancel",
+      "tjmHt": 1200,
+      "typePresta": "formation",
+      "client": "Edugroupe",
+      "comment": "merci edugroupe",
+      "id": 8
+    },
+    {
+      "nbJours": 1,
+      "tva": 20,
+      "state": "Cancel",
+      "tjmHt": 1200,
+      "typePresta": "formation",
+      "client": "Edugroupe",
+      "comment": "merci edugroupe",
+      "id": 6
+    },
+    {
+      "nbJours": 1,
+      "tva": 20,
+      "state": "Cancel",
+      "tjmHt": 1200,
+      "typePresta": "formation",
+      "client": "Edugroupe",
+      "comment": "merci edugroupe",
+      "id": 5
     }
   ],
   "clients": [

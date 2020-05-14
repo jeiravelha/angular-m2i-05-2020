@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Client } from 'src/app/shared/models/client';
 import { ClientsService } from '../../services/clients.service';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
@@ -12,7 +12,7 @@ import { StateClient } from 'src/app/shared/enums/state-client.enum';
 export class PageListClientComponent implements OnInit {
 
   public headers: string[];
-  public collection$: Observable<Client[]>;
+  public collection$: Subject<Client[]> = new Subject();
   public title: string;
   public subtitle: string;
 
@@ -24,7 +24,9 @@ export class PageListClientComponent implements OnInit {
     this.title = 'Clients :';
     this.subtitle = 'All clients';
     this.headers = ["","","Name", "CA", "CA TTC", "State"];
-    this.collection$ = this.cs.collection;
+    this.cs.collection.subscribe((datas) => {
+      this.collection$.next(datas);
+    })
   }
 
   public changeState(item : Client, event){
@@ -37,6 +39,9 @@ export class PageListClientComponent implements OnInit {
 
   public deleterecord(item : Client){
     this.cs.delete(item.id).subscribe( (res) => {
+      this.cs.collection.subscribe((datas) => {
+        this.collection$.next(datas);
+      })
     } );
   }
 

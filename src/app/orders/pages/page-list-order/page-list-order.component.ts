@@ -1,5 +1,5 @@
 import { Component, OnInit, IterableDiffers } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Order } from 'src/app/shared/models/order';
 import { OrdersService } from '../../services/orders.service';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
@@ -13,7 +13,7 @@ import { Button } from 'src/app/shared/interfaces/button';
 export class PageListOrderComponent implements OnInit {
 
   public headers: string[];
-  public collection$: Observable<Order[]>;
+  public collection$: Subject<Order[]> = new Subject();
   public title: string;
   public subtitle: string;
 
@@ -39,7 +39,9 @@ export class PageListOrderComponent implements OnInit {
     this.title = 'Orders :';
     this.subtitle = 'All orders';
     this.headers = ["","","Type", "Client", "NbJours", "TJM HT", "Total HT", "Total TTC", "State"];
-    this.collection$ = this.os.collection;
+    this.os.collection.subscribe((datas) => {
+      this.collection$.next(datas);
+    })
   }
 
   public changeState(item : Order, event){
@@ -56,6 +58,9 @@ export class PageListOrderComponent implements OnInit {
 
   public deleterecord(item : Order){
     this.os.delete(item.id).subscribe( (res) => {
+      this.os.collection.subscribe((datas) => {
+        this.collection$.next(datas);
+      })
     } );
   }
 
