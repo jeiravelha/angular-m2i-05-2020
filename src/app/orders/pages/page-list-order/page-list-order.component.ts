@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Order } from 'src/app/shared/models/order';
 import { OrdersService } from '../../services/orders.service';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
+import { Button } from 'src/app/shared/interfaces/button';
 
 @Component({
   selector: 'app-page-list-order',
@@ -16,14 +17,28 @@ export class PageListOrderComponent implements OnInit {
   public title: string;
   public subtitle: string;
 
+  public btnRoute : Button;
+  public btnHref : Button;
+  public btnAction : Button;
+
   public states = Object.values(StateOrder);
 
   constructor(private os: OrdersService) { }
 
   ngOnInit(): void {
+    this.btnRoute = {
+      text: 'Add Route', route: 'add'
+    }
+    this.btnHref = {
+      text: 'Google', href:'http://www.google.com'
+    }
+    this.btnAction = {
+      text: 'Action bouton', action: true
+    }
+
     this.title = 'Orders :';
     this.subtitle = 'All orders';
-    this.headers = ["Type", "Client", "NbJours", "TJM HT", "Total HT", "Total TTC", "State"];
+    this.headers = ["","","Type", "Client", "NbJours", "TJM HT", "Total HT", "Total TTC", "State"];
     this.collection$ = this.os.collection;
   }
 
@@ -33,6 +48,10 @@ export class PageListOrderComponent implements OnInit {
       //Traitement Error + mise à jour state de l'item car réussi
       item.state = res.state;
     } );
+  }
+
+  public openbtn() {
+    console.log("openbtn");
   }
 
 }
