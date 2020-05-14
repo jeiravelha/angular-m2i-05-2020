@@ -28,7 +28,10 @@ export class PageListClientComponent implements OnInit {
   }
 
   public changeState(item : Client, event){
-    console.log(item);
-    console.log(event.target.value);
+    this.os.changeState(item, event.target.value).subscribe( (res) => {
+      //console.log(res);
+      //Traitement Error + mise à jour state de l'item car réussi
+      item.state = res.state;
+    } );
   }
 }

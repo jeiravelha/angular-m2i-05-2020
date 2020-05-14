@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Order } from '../../models/order';
 
 @Component({
   selector: 'app-tableau-light',
   templateUrl: './tableau-light.component.html',
-  styleUrls: ['./tableau-light.component.scss']
+  styleUrls: ['./tableau-light.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TableauLightComponent implements OnInit {
 
