@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="typePresta">Type prestation :</label>
+    <input formControlName="typePresta" type="text" class="form-control" id="typePresta">
+    <div class="alert alert-danger" *ngIf="form.get('typePresta').invalid && form.get('typePresta').touched">Invalid field</div>
+  </div>
+
+  <div class="form-group">
+    <label for="client">Client :</label>
+    <input formControlName="client" type="text" class="form-control" id="client">
+    <div class="alert alert-danger" *ngIf="form.get('client').invalid && form.get('client').touched">Invalid field</div>
+  </div>
+
+ <div class="form-group">
+    <label for="nbjours">Nb Jours :</label>
+    <input formControlName="nbjours" type="text" class="form-control" id="nbjours">
+    <div class="alert alert-danger" *ngIf="form.get('nbjours').invalid && form.get('nbjours').touched">Invalid field</div>
+  </div>
+
+  <div class="form-group">
+    <label for="tjmHt">TJM HT :</label>
+    <input formControlName="tjmHt" type="text" class="form-control" id="tjmHt">
+  </div>
+
+  <div class="form-group">
+    <label for="state">State :</label>
+    <select formControlName="state" class="form-control" id="state">
+      <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add Order</button>
+</form>

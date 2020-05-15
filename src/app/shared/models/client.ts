@@ -3,8 +3,8 @@ import { ClientI } from '../interfaces/client-i';
 
 export class Client implements ClientI {
   'id': number;
-  'name' = 'Joao';
-  'ca' = 100000;
+  'name': string;
+  'ca':number;
   'state' = StateClient.ACTIVE;
 
   constructor(obj?: Partial<Client>)

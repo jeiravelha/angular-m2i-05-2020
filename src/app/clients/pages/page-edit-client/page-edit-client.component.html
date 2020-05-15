@@ -2,7 +2,10 @@
 
   <div class="borders">
 
-
+    <br><br><br><br><br><br>
+    <div class="borders">
+      <app-form-client *ngIf="currentclient$ | async as item"  (formSubmited)="update($event)" [init]="item"></app-form-client>
+    </div>
 
   </div>
 

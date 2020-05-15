@@ -4,6 +4,8 @@ import { Client } from 'src/app/shared/models/client';
 import { ClientsService } from '../../services/clients.service';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { Button } from 'src/app/shared/interfaces/button';
+import { Router, ActivatedRoute } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page-list-client',
@@ -14,6 +16,7 @@ export class PageListClientComponent implements OnInit {
 
   public headers: string[];
   public collection$: Subject<Client[]> = new Subject();
+
   public title: string;
   public subtitle: string;
 
@@ -21,14 +24,18 @@ export class PageListClientComponent implements OnInit {
 
   public states = Object.values(StateClient);
 
-  constructor(private cs: ClientsService) { }
+  constructor(private cs: ClientsService,private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.btnRoute = {
       text: 'Add Client', route: 'add'
     }
-    this.title = 'Clients :';
-    this.subtitle = 'All clients';
+
+    this.route.data.subscribe( (datas) => {
+        this.title = datas.title;
+        this.subtitle = datas.subtitle;
+    })
+
     this.headers = ["","","Name", "CA", "CA TTC", "State"];
     this.cs.collection.subscribe((datas) => {
       this.collection$.next(datas);
@@ -52,6 +59,7 @@ export class PageListClientComponent implements OnInit {
   }
 
   public editrecord(item : Client){
-    //
+    this.router.navigate(['clients/edit', item.id], { queryParams:  filter, skipLocationChange: true});
+    window.history.pushState(this.router.url,this.router.url);
   }
 }

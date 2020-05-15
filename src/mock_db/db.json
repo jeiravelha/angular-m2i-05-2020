@@ -3,7 +3,7 @@
     {
       "nbJours": 1,
       "tva": 20,
-      "state": "Option",
+      "state": "Cancel",
       "tjmHt": 1200,
       "typePresta": "coaching",
       "client": "Capgemini",
@@ -13,7 +13,7 @@
     {
       "nbJours": 1,
       "tva": 20,
-      "state": "Cancel",
+      "state": "Option",
       "tjmHt": 1200,
       "typePresta": "formation",
       "client": "Edugroupe",
@@ -23,7 +23,7 @@
     {
       "nbJours": 1,
       "tva": 20,
-      "state": "Cancel",
+      "state": "Confirmed",
       "tjmHt": 1200,
       "typePresta": "formation",
       "client": "Edugroupe",
@@ -43,7 +43,7 @@
     {
       "nbJours": 1,
       "tva": 20,
-      "state": "Cancel",
+      "state": "Option",
       "tjmHt": 1200,
       "typePresta": "formation",
       "client": "Edugroupe",
@@ -53,16 +53,46 @@
   ],
   "clients": [
     {
+      "id": 1,
       "name": "Christophe",
       "ca": 12000,
-      "state": "Inactive",
-      "id": 1
+      "state": "Inactive"
     },
     {
-      "name": "Jeff",
+      "id": 2,
+      "name": "Jeff 2",
       "ca": 22000,
-      "state": "Active",
-      "id": 2
+      "state": "Active"
+    },
+    {
+      "name": "New client",
+      "ca": 100000,
+      "state": "Inactive",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "New client",
+      "ca": 100000,
+      "state": "Active"
+    },
+    {
+      "name": "New client",
+      "ca": 100000,
+      "state": "Inactive",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "New client",
+      "ca": 100000,
+      "state": "Active"
+    },
+    {
+      "id": 7,
+      "name": "Magic Emperor",
+      "ca": 1000,
+      "state": "Active"
     }
   ]
 }

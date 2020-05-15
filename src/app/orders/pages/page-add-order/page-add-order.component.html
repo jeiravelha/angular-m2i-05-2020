@@ -1,8 +1,9 @@
 <app-template-a [title]="title" [subtitle]="subtitle">
 
+  <br><br><br><br><br><br>
   <div class="borders">
 
-
+    <app-form-order (formSubmited)="add($event)"></app-form-order>
 
   </div>
 

@@ -49,6 +49,9 @@ export class OrdersService {
   }
 
   // Add item
+  public Add(item:Order) :  Observable<Order> {
+    return this.http.post<Order>(`${this.urlApi}orders`, item);
+  }
 
   // Delete Item
   public delete(itemid:number) : Observable<Order>{

@@ -49,6 +49,9 @@ export class ClientsService {
   }
 
   // Add item
+  public Add(item:Client) :  Observable<Client> {
+    return this.http.post<Client>(`${this.urlApi}clients`, item);
+  }
 
   // Delete item
   public delete(itemid:number) : Observable<Client>{
@@ -56,4 +59,7 @@ export class ClientsService {
   }
 
   //Get Item by Id
+  public GetItemById(id:number) :  Observable<Client> {
+    return this.http.get<Client>(`${this.urlApi}clients/${id}`);
+  }
 }

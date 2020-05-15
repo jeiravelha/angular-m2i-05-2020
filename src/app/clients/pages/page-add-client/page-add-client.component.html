@@ -1,9 +1,8 @@
 <app-template-b [title]="title" [subtitle]="subtitle">
 
+  <br><br><br><br><br><br>
   <div class="borders">
-
-
-
+    <app-form-client (formSubmited)="add($event)"></app-form-client>
   </div>
 
 </app-template-b>
