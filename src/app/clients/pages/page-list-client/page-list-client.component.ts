@@ -6,6 +6,7 @@ import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { Button } from 'src/app/shared/interfaces/button';
 import { Router, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { Link } from 'src/app/shared/interfaces/link';
 
 @Component({
   selector: 'app-page-list-client',
@@ -23,6 +24,7 @@ export class PageListClientComponent implements OnInit {
   public btnRoute : Button;
 
   public states = Object.values(StateClient);
+  public navlinks : Link[];
 
   constructor(private cs: ClientsService,private router: Router, private route: ActivatedRoute) { }
 
@@ -36,15 +38,16 @@ export class PageListClientComponent implements OnInit {
         this.subtitle = datas.subtitle;
     })
 
-    this.headers = ["","","Name", "CA", "CA TTC", "State"];
+    this.headers = ["","","Name", "CA", "CA TTC", "State","Comment"];
     this.cs.collection.subscribe((datas) => {
       this.collection$.next(datas);
     })
+
+    this.navlinks = [{route: 'details', label: 'Details'}, {route: 'comments', label: 'Comments'}];
   }
 
   public changeState(item : Client, event){
     this.cs.changeState(item, event.target.value).subscribe( (res) => {
-      //console.log(res);
       //Traitement Error + mise à jour state de l'item car réussi
       item.state = res.state;
     } );
@@ -62,4 +65,9 @@ export class PageListClientComponent implements OnInit {
     this.router.navigate(['clients/edit', item.id], { queryParams:  filter, skipLocationChange: true});
     window.history.pushState(this.router.url,this.router.url);
   }
+
+  public loadDetail(item: Client){
+    this.cs.firstItem$.next(item);
+  }
+
 }

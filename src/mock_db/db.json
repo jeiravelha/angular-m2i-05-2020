@@ -56,43 +56,22 @@
       "id": 1,
       "name": "Christophe",
       "ca": 12000,
-      "state": "Inactive"
+      "state": "Active",
+      "comment": "merci edugroupe"
     },
     {
+      "state": "Inactive",
       "id": 2,
       "name": "Jeff 2",
       "ca": 22000,
-      "state": "Active"
+      "comment": "merci edugroupe"
     },
     {
-      "name": "New client",
-      "ca": 100000,
-      "state": "Inactive",
-      "id": 3
-    },
-    {
-      "id": 4,
-      "name": "New client",
-      "ca": 100000,
-      "state": "Active"
-    },
-    {
-      "name": "New client",
-      "ca": 100000,
-      "state": "Inactive",
-      "id": 5
-    },
-    {
-      "id": 6,
-      "name": "New client",
-      "ca": 100000,
-      "state": "Active"
-    },
-    {
+      "state": "Active",
       "id": 7,
       "name": "Magic Emperor",
       "ca": 1000,
-      "state": "Active"
+      "comment": "merci edugroupe ou pas"
     }
   ]
 }

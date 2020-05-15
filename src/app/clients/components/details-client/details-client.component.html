@@ -1,0 +1,9 @@
+Details :
+
+<div style="background-color: black;">
+
+<app-text [page]="true" *ngIf="firstitem$ | async as firstitem ">
+  <p>{{ firstitem.name }}</p>
+</app-text>
+
+</div>

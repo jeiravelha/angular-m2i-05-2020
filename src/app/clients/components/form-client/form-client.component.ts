@@ -28,7 +28,8 @@ export class FormClientComponent implements OnInit {
         this.init.ca,
         Validators.compose([Validators.required, Validators.min(1), Validators.max(100000)])
       ],
-      state: [this.init.state]
+      state: [this.init.state],
+      comment: [this.init.comment]
     }
     );
   }

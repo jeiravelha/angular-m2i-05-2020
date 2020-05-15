@@ -9,11 +9,12 @@ import { StateDirective } from './directives/state.directive';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextModule } from '../text/text.module';
+import { NavInlineComponent } from './components/nav-inline/nav-inline.component';
 
 
 
 @NgModule({
-  declarations: [TableauLightComponent, ButtonComponent, TableauDarkComponent, TotalPipe, StateDirective],
+  declarations: [TableauLightComponent, ButtonComponent, TableauDarkComponent, TotalPipe, StateDirective, NavInlineComponent],
   exports: [
     TemplatesModule,
     TableauLightComponent,
@@ -21,7 +22,8 @@ import { TextModule } from '../text/text.module';
     TableauDarkComponent,
     TotalPipe,
     StateDirective,
-    TextModule
+    TextModule,
+    NavInlineComponent
   ],
   imports: [
     CommonModule,

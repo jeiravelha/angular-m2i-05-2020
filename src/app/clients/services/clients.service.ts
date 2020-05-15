@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Client } from 'src/app/shared/models/client';
 import { environment } from 'src/environments/environment';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
@@ -13,15 +13,12 @@ export class ClientsService {
 
   private pCollection : Observable<Client[]>;
   private urlApi = environment.urlApi;
+  private itemDeleted: Client;
+  public firstItem$: BehaviorSubject<Client> = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) {
     this.collection = this.http.get<Client[]>(`${this.urlApi}clients`).pipe(
-      // mapping des "functions" genre calcul etc... pour que ça remonte dans le modèle Order
-      map((tab) => {
-        return tab.map((obj) => {
-          return new Client(obj)
-        })
-      })
+      tap((clientstab) => { this.firstItem$.next(clientstab[0])})
     )
    }
 

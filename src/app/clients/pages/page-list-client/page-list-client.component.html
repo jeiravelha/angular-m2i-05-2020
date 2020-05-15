@@ -2,25 +2,32 @@
 
   <div class="borders">
     <app-tableau-dark *ngIf="collection$ | async as collection" [headers]="headers">
-      <tr *ngFor="let item of collection">
+      <tr *ngFor="let item of collection" (click)="loadDetail(item)">
         <td>
-          <app-icon-edit (click)="editrecord(item)"></app-icon-edit>
+          <app-icon-edit (click)="$event.stopPropagation();editrecord(item)"></app-icon-edit>
         </td>
         <td>
-          <app-icon-trash (click)="deleterecord(item)"></app-icon-trash>
+          <app-icon-trash (click)="$event.stopPropagation();deleterecord(item)"></app-icon-trash>
         </td>
         <td>{{item.name}}</td>
         <td>{{item.ca | currency:'EUR'}}</td>
         <td>{{item | total:'Client_TTC' | currency:'EUR'}}</td>
         <td [appState]="item.state">
-          <select class="form-control" (change)="changeState(item, $event)">
+          <select class="form-control" (change)="changeState(item, $event)" (click)="$event.stopPropagation()">
                 <option *ngFor="let state of states" [value]="state" [selected]="state == item.state">{{state}}</option>
           </select>
         </td>
+        <td>{{item.comment}}</td>
       </tr>
     </app-tableau-dark>
 
     <app-button [text]="btnRoute.text" [route]="btnRoute.route"></app-button>
+
+    <br><br>
+
+    <app-nav-inline [links]="navlinks" ></app-nav-inline>
+    <router-outlet></router-outlet>
+
   </div>
 
   </app-template-b>

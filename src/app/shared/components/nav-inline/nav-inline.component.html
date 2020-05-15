@@ -1,0 +1,5 @@
+<ul class="nav nav-pills">
+  <li class="nav-item" *ngFor="let item of links">
+    <a data-toggle="tab" class="nav-link active" [routerLink]="item.route" routerLinkActive="active">{{item.label}}</a>
+  </li>
+</ul>

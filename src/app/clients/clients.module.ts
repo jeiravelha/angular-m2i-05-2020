@@ -8,9 +8,11 @@ import { FormClientComponent } from './components/form-client/form-client.compon
 import { PageAddClientComponent } from './pages/page-add-client/page-add-client.component';
 import { PageEditClientComponent } from './pages/page-edit-client/page-edit-client.component';
 import { PageListClientComponent } from './pages/page-list-client/page-list-client.component';
+import { DetailsClientComponent } from './components/details-client/details-client.component';
+import { CommentsClientComponent } from './components/comments-client/comments-client.component';
 
 @NgModule({
-  declarations: [PageListClientComponent, PageAddClientComponent, PageEditClientComponent, FormClientComponent],
+  declarations: [PageListClientComponent, PageAddClientComponent, PageEditClientComponent, FormClientComponent, DetailsClientComponent, CommentsClientComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,

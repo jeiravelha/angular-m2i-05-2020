@@ -1,0 +1,9 @@
+Comments :
+
+<div style="background-color: black;">
+
+<app-text [page]="true" *ngIf="firstitem$ | async as firstitem ">
+  <p>{{ firstitem.comment }}</p>
+</app-text>
+
+</div>
